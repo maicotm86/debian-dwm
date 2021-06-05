@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-sudo apt update -yy
+sudo apt update -yy && sudo apt dist-upgrade -yy
 
 sudo apt install build-essential git wget curl neovim libx11-dev libxft-dev libxinerama-dev libfontconfig1 apt-transport-https xorg xserver-xorg-dev -yy
 
