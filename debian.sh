@@ -7,6 +7,9 @@ sudo apt install xdg-user-dirs build-essential git wget curl neovim apt-transpor
 # Suckless dependences
 sudo apt install libx11-dev libxft-dev libx11-xcb-dev libxcb-res0-dev libharfbuzz-dev libxinerama-dev libfontconfig1 -yy
 
+#
+# Brave Browser
+#
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -14,6 +17,22 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 sudo apt update -yy
 
 sudo apt install brave-browser -yy
+
+#
+# PostgreSQL
+#
+# Create the file repository configuration:
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+# Import the repository signing key:
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+# Update the package lists:
+sudo apt update -yy
+
+# Install the latest version of PostgreSQL.
+# If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
+sudo apt-get -yy install postgresql
 
 #
 # Setup the repository
