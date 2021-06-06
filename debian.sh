@@ -2,7 +2,10 @@
 
 sudo apt update -yy && sudo apt dist-upgrade -yy
 
-sudo apt install xdg-user-dirs build-essential git wget curl neovim libx11-dev libxft-dev libxinerama-dev libfontconfig1 apt-transport-https xorg xserver-xorg-dev -yy
+sudo apt install xdg-user-dirs build-essential git wget curl neovim apt-transport-https xorg xserver-xorg-dev -yy
+
+# Suckless dependences
+sudo apt install libx11-dev libxft-dev libx11-xcb-dev libxcb-res0-dev libharfbuzz-dev libxinerama-dev libfontconfig1 -yy
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
